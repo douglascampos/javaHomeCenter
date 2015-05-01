@@ -8,26 +8,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Temperature {
+public class Sensor {
 
 	private @Id @GeneratedValue Long id;
 	
 	private String place;
-	private double temp = 0;
+	private double value = 0;
 	private Date date = new Date();
+	private String name;
 	
 	@Deprecated
-	public Temperature() {
+	public Sensor() {
 		place = null;
 	}
 	
-	public Temperature (String place, double temp){
+	public Sensor (String place, String name, double value){
 		this.place = place;
-		this.temp  = temp;
+		this.value  = value;
+		this.name  = name;
 	}
 	
-	public double getTemp(){
-		return temp;
+	public double getValue(){
+		return value;
+	}
+	
+	public String getName(){
+		return name;
 	}
 	
 	public String getPlace(){

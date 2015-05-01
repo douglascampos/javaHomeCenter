@@ -7,15 +7,15 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import br.com.codenight.homecenter.model.Temperature;
-import br.com.codenight.homecenter.repository.TemperatureRepository;
+import br.com.codenight.homecenter.model.Sensor;
+import br.com.codenight.homecenter.repository.SensorRepository;
 
 @EnableAutoConfiguration
 @SpringBootApplication
 @ComponentScan
 public class HomeCenter {
 	
-	private @Autowired TemperatureRepository temperatureRepository;
+	private @Autowired SensorRepository temperatureRepository;
 	
     public static void main(String[] args) throws Exception {
         SpringApplication.run(HomeCenter.class, args);
@@ -24,7 +24,7 @@ public class HomeCenter {
     
     @PostConstruct
 	public void init() {
-    	Temperature temperature = new Temperature("sala", 30.0);
+    	Sensor temperature = new Sensor("sala", "temperature", 30.0);
     	
     	temperatureRepository.save(temperature);
     	

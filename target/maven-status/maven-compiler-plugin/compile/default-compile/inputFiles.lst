@@ -1,4 +1,4 @@
-/Users/strider/projetos/Workspace/HomeCenter/src/main/java/br/com/codenight/homecenter/repository/TemperatureRepository.java
+/Users/strider/projetos/Workspace/HomeCenter/src/main/java/br/com/codenight/homecenter/model/Sensor.java
+/Users/strider/projetos/Workspace/HomeCenter/src/main/java/br/com/codenight/homecenter/repository/SensorRepository.java
+/Users/strider/projetos/Workspace/HomeCenter/src/main/java/br/com/codenight/homecenter/controller/SensorController.java
 /Users/strider/projetos/Workspace/HomeCenter/src/main/java/br/com/codenight/homecenter/HomeCenter.java
-/Users/strider/projetos/Workspace/HomeCenter/src/main/java/br/com/codenight/homecenter/controller/TemperatureController.java
-/Users/strider/projetos/Workspace/HomeCenter/src/main/java/br/com/codenight/homecenter/model/Temperature.java

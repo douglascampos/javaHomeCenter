@@ -2,13 +2,13 @@ package br.com.codenight.homecenter.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.com.codenight.homecenter.model.Temperature;
+import br.com.codenight.homecenter.model.Sensor;
 
-public interface TemperatureRepository extends CrudRepository<Temperature, Long> {
+public interface SensorRepository extends CrudRepository<Sensor, Long> {
 
 	@Override
 //	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	<S extends Temperature> S save(S s);
+	<S extends Sensor> S save(S s);
 
 	@Override
 //	@PreAuthorize("hasRole('ROLE_ADMIN')")
