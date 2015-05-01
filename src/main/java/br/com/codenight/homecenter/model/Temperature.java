@@ -1,5 +1,8 @@
 package br.com.codenight.homecenter.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,6 +14,7 @@ public class Temperature {
 	
 	private String place;
 	private double temp = 0;
+	private Date date = new Date();
 	
 	@Deprecated
 	public Temperature() {
@@ -28,5 +32,10 @@ public class Temperature {
 	
 	public String getPlace(){
 		return place;
+	}
+	
+	public String getDate(){
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		return sdf.format(date);
 	}
 }
