@@ -3,9 +3,11 @@ package main.java.br.com.codenight.homecenter.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+@Entity
 public class Scanner {
 
 	private @Id @GeneratedValue Long id;
