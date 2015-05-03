@@ -1,53 +1,43 @@
 package main.java.br.com.codenight.homecenter.model;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Sensor {
 
 	private @Id @GeneratedValue Long id;
 	
-	@ManyToOne(cascade=CascadeType.PERSIST)
-	private Place place;
+	@OneToMany(cascade=CascadeType.PERSIST)
+	private List<Scanner> scanners = new ArrayList<Scanner>();
 	
-	private String local;
-	private double value = 0;
-	private Date date = new Date();
 	private String name;
 	
 	@Deprecated
 	public Sensor() {
-		local = null;
+		name = null;
 	}
 	
-	public Sensor (String local, String name, double value){
-		this.local = local;
-		this.value  = value;
+	public Sensor (String name){
 		this.name  = name;
-	}
-	
-	public double getValue(){
-		return value;
 	}
 	
 	public String getName(){
 		return name;
 	}
 	
-	public String getPlace(){
-		return local;
+	public void addScanner(Scanner scanner){
+		scanners.add(scanner);
 	}
 	
-	public String getDate(){
-		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-		return sdf.format(date);
+	public List<Scanner> getScanners() {
+		return scanners;
 	}
 	
 }

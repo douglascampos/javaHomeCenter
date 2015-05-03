@@ -1,6 +1,4 @@
 package main.java.br.com.codenight.homecenter;
-import java.util.Date;
-
 import javax.annotation.PostConstruct;
 
 import main.java.br.com.codenight.homecenter.model.Place;
@@ -33,11 +31,13 @@ public class HomeCenter {
     @PostConstruct
 	public void init() {
     	
-    	Sensor temperature = new Sensor("sala", "temperature", 30.0);
+    	Sensor temperature = new Sensor("temperature");
     	Place place = new Place("bedroom");
     	Scanner scanner = new Scanner(67.0, "02/05/2015 19:30");
+    	Scanner scanner2 = new Scanner(76.0, "02/05/2014 19:30");
     	
-    	place.addSensor(temperature);
+    	place.addScanner(scanner);
+    	temperature.addScanner(scanner2);
     	
     	placeRepository.save(place);
     	sensorRepository.save(temperature);

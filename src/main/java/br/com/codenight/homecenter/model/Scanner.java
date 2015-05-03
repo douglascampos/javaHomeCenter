@@ -1,10 +1,10 @@
 package main.java.br.com.codenight.homecenter.model;
 
-import java.text.SimpleDateFormat;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Scanner {
@@ -13,6 +13,12 @@ public class Scanner {
 	private double value = 0;
 	private String date;
 	
+	@ManyToOne(cascade=CascadeType.PERSIST)
+	private Place place;
+	
+//	@ManyToOne(cascade=CascadeType.PERSIST)
+//	private List<Sensor> sensors = new ArrayList<Sensor>();
+//	
 	@Deprecated
 	public Scanner() {
 		value = 0.0;
@@ -28,8 +34,16 @@ public class Scanner {
 		return value;
 	}
 	
+	public double getId() {
+		return id;
+	}
+	
 	public String getDate(){
 		return date;
+	}
+	
+	public Place getPlace(){
+		return this.place;
 	}
 	
 }
