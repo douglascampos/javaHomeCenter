@@ -1,8 +1,8 @@
-package br.com.codenight.homecenter.repository;
+package main.java.br.com.codenight.homecenter.repository;
+
+import main.java.br.com.codenight.homecenter.model.Sensor;
 
 import org.springframework.data.repository.CrudRepository;
-
-import br.com.codenight.homecenter.model.Sensor;
 
 public interface SensorRepository extends CrudRepository<Sensor, Long> {
 

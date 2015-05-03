@@ -1,8 +1,8 @@
-package br.com.codenight.homecenter.repository;
+package main.java.br.com.codenight.homecenter.repository;
+
+import main.java.br.com.codenight.homecenter.model.Place;
 
 import org.springframework.data.repository.CrudRepository;
-
-import br.com.codenight.homecenter.model.Place;
 
 public interface PlaceRepository extends CrudRepository<Place, Long> {
 	@Override

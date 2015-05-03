@@ -1,5 +1,10 @@
-package br.com.codenight.homecenter;
+package main.java.br.com.codenight.homecenter;
 import javax.annotation.PostConstruct;
+
+import main.java.br.com.codenight.homecenter.model.Place;
+import main.java.br.com.codenight.homecenter.model.Sensor;
+import main.java.br.com.codenight.homecenter.repository.PlaceRepository;
+import main.java.br.com.codenight.homecenter.repository.SensorRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -7,17 +12,12 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import br.com.codenight.homecenter.model.Place;
-import br.com.codenight.homecenter.model.Sensor;
-import br.com.codenight.homecenter.repository.PlaceRepository;
-import br.com.codenight.homecenter.repository.SensorRepository;
-
 @EnableAutoConfiguration
 @SpringBootApplication
 @ComponentScan
 public class HomeCenter {
 	
-	private @Autowired SensorRepository temperatureRepository;
+	private @Autowired SensorRepository sensorRepository;
 	private @Autowired PlaceRepository placeRepository;
 	
     public static void main(String[] args) throws Exception {
@@ -29,10 +29,11 @@ public class HomeCenter {
 	public void init() {
     	
     	Sensor temperature = new Sensor("sala", "temperature", 30.0);
-    	temperatureRepository.save(temperature);
-    	
     	Place place = new Place("bedroom");
-    	placeRepository.save(place);
     	
+    	place.addSensor(temperature);
+    	
+    	placeRepository.save(place);
+    	sensorRepository.save(temperature);
     }
 }
