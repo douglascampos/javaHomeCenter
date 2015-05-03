@@ -1,13 +1,13 @@
 package main.java.br.com.codenight.homecenter.repository;
 
-import main.java.br.com.codenight.homecenter.model.Sensor;
+import main.java.br.com.codenight.homecenter.model.Scanner;
 import org.springframework.data.repository.CrudRepository;
 
-public interface SensorRepository extends CrudRepository<Sensor, Long> {
+public interface ScannerRepository extends CrudRepository<Scanner, Long> {
 
 	@Override
 //	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	<S extends Sensor> S save(S s);
+	<S extends Scanner> S save(S s);
 
 	@Override
 //	@PreAuthorize("hasRole('ROLE_ADMIN')")

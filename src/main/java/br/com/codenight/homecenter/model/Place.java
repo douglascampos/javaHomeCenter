@@ -13,11 +13,10 @@ import javax.persistence.OneToMany;
 public class Place {
 
 	private @Id @GeneratedValue Long id;
+	private String name;
 	
 	@OneToMany(cascade=CascadeType.PERSIST)
 	private List<Sensor> sensors = new ArrayList<Sensor>();
-	
-	private String name;
 	
 	@Deprecated
 	public Place(){
