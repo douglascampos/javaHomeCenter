@@ -1,7 +1,6 @@
 package main.java.br.com.codenight.homecenter.model;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,14 +11,15 @@ public class Scanner {
 
 	private @Id @GeneratedValue Long id;
 	private double value = 0;
-	private Date date = new Date();
+	private String date;
 	
 	@Deprecated
 	public Scanner() {
 		value = 0.0;
+		date = "";
 	}
 	
-	public Scanner(double value, Date date) {
+	public Scanner(double value, String date) {
 		this.value = value;
 		this.date = date;
 	}
@@ -29,8 +29,7 @@ public class Scanner {
 	}
 	
 	public String getDate(){
-		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-		return sdf.format(date);
+		return date;
 	}
 	
 }
