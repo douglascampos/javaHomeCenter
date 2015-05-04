@@ -16,7 +16,7 @@ public class Place {
 	private String name;
 	
 	@OneToMany(cascade=CascadeType.PERSIST)
-	private List<Scanner> scanners = new ArrayList<Scanner>();
+	private List<Sensor> sensors = new ArrayList<Sensor>();
 	
 	@Deprecated
 	public Place(){
@@ -31,11 +31,11 @@ public class Place {
 		return name;
 	}
 	
-	public void addScanner(Scanner scanner){
-		scanners.add(scanner);
+	public void addSensor(Sensor sensor){
+		sensors.add(sensor);
 	}
 	
-	public List<Scanner> getScanners() {
-		return scanners;
+	public List<Sensor> getSensors() {
+		return sensors;
 	}
 }

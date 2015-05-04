@@ -32,12 +32,21 @@ public class HomeCenter {
 	public void init() {
     	
     	Sensor temperature = new Sensor("temperature");
+    	Sensor humidity = new Sensor("humidity");
     	Place place = new Place("bedroom");
     	Scanner scanner = new Scanner(67.0, "02/05/2015 19:30");
     	Scanner scanner2 = new Scanner(76.0, "02/05/2014 19:30");
     	
-    	place.addScanner(scanner);
+    	Scanner scanner3 = new Scanner(99.0, "01/07/2014 19:30");
+    	
+    	place.addSensor(temperature);
+    	
+    	place.addSensor(humidity);
+    	
+    	temperature.addScanner(scanner);
     	temperature.addScanner(scanner2);
+    	
+    	humidity.addScanner(scanner3);
     	
     	placeRepository.save(place);
     	sensorRepository.save(temperature);
